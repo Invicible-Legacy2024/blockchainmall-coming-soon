@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --lime: #ECF1AF;
+    --leafy-green: #0A4646;
+    --cool-white: #D7E8FA;
+    --lime-green: #5DF9C0;
+    --ocean-blue: #3B1EFF;
+    --vibrant-orange: #E35314;
+    --navy-green: #164147;
+    --mocha: #2D2A24;
+    --card-bg-light: rgba(255, 255, 255, 0.15);
+    --card-border-light: rgba(255, 255, 255, 0.3);
+    
+    --bg-primary: #ffffff;
+    --text-primary: #333333;
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --card-border: rgba(0, 0, 0, 0.1);
+    --icon-color: var(--ocean-blue);
+    --accent-color: var(--vibrant-orange);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    min-height: 100vh;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* Video Background */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    filter: grayscale(100%) brightness(120%);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, var(--ocean-blue), var(--vibrant-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 10px;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--ocean-blue);
+    letter-spacing: 1px;
+    font-weight: 700;
+    padding: 0 10px;
+}
+
+.main-headline {
+    font-size: 3.2rem;
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, var(--ocean-blue), var(--vibrant-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGlow 3s ease-in-out infinite alternate;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding: 0 10px;
+}
+
+.description {
+    font-size: 1.4rem;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    color: var(--text-primary);
+    opacity: 0.9;
+    line-height: 1.6;
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    width: 100%;
+}
+
+.feature-card {
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    background: linear-gradient(45deg, var(--lime-green), var(--vibrant-orange));
+    color: white;
+}
+
+.feature-title {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+    color: var(--ocean-blue);
+    font-weight: 800;
+}
+
+.feature-description {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    color: #555;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: nowrap;
+    margin: 50px 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+.countdown-card {
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-value {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--vibrant-orange);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.countdown-label {
+    font-size: 1.15rem;
+    color: var(--ocean-blue);
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.signup-form {
+    max-width: 700px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--ocean-blue);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 18px 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--ocean-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 30, 255, 0.2);
+    background: rgba(255, 255, 255, 1);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 18px 25px;
+    background: linear-gradient(45deg, var(--ocean-blue), var(--vibrant-orange));
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.submit-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(59, 30, 255, 0.3);
+}
+
+.social-links {
+    display: flex;
+    gap: 30px;
+    margin: 50px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.9rem;
+    color: white;
+    background: linear-gradient(45deg, var(--ocean-blue), var(--vibrant-orange));
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(59, 30, 255, 0.3);
+}
+
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    width: 100%;
+    font-weight: 500;
+    color: #666;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 20px rgba(93, 249, 192, 0.3);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(93, 249, 192, 0.4), 0 0 40px rgba(227, 83, 20, 0.2);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Premium Background Images */
+.premium-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    opacity: 0.3;
+    background: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') center/cover no-repeat;
+    filter: grayscale(100%) brightness(150%);
+}
+
+.form-title {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: var(--ocean-blue);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .main-headline {
+        font-size: 2.8rem;
+    }
+    
+    .description {
+        font-size: 1.3rem;
+    }
+    
+    .feature-title {
+        font-size: 1.6rem;
+    }
+
+    .countdown-value {
+        font-size: 2.5rem;
+    }
+    
+    .logo {
+        font-size: 3.0rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo {
+        font-size: 2.8rem;
+    }
+    
+    .tagline {
+        font-size: 1.6rem;
+    }
+    
+    .main-headline {
+        font-size: 2.5rem;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-headline {
+        font-size: 2.2rem;
+    }
+    
+    .tagline {
+        font-size: 1.4rem;
+    }
+    
+    .description {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .countdown-value {
+        font-size: 2.0rem;
+    }
+    
+    .countdown-label {
+        font-size: 1rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .feature-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .social-link {
+        width: 55px;
+        height: 55px;
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-headline {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .description {
+        font-size: 1.0rem;
+    }
+    
+    .countdown-timer {
+        gap: 8px;
+    }
+    
+    .countdown-card {
+        padding: 15px 8px;
+    }
+    
+    .countdown-value {
+        font-size: 1.6rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        font-size: 2.0rem;
+    }
+
+    .feature-title {
+        font-size: 1.3rem;
+    }
+
+    .feature-description {
+        font-size: 1rem;
+    }
+
+    .signup-form {
+        padding: 25px 20px;
+    }
+
+    .form-group input {
+        padding: 15px 20px;
+    }
+
+    .submit-button {
+        padding: 16px 20px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-headline {
+        font-size: 1.6rem;
+    }
+    
+    .countdown-value {
+        font-size: 1.4rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.75rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo {
+        font-size: 1.8rem;
+    }
+    
+    .form-title {
+        font-size: 1.4rem;
+    }
+}

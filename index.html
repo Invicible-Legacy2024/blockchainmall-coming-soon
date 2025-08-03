@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BlockchainMall.org is revolutionizing online shopping with blockchain technology, borderless transactions, and crypto cashbacks.">
+    <meta name="keywords" content="Blockchain, E-Commerce, Crypto, Shopping, Cashback, Decentralized Commerce">
+    <meta name="author" content="BlockchainMall.org">
+    <meta property="og:title" content="BlockchainMall.org - Coming Soon">
+    <meta property="og:description" content="Discover the future of e-commerce with blockchain technology, crypto cashbacks, and borderless shopping.">
+    <meta property="og:image" content="link-to-preview-image">
+    <meta property="og:url" content="https://blockchainmall.org">
+    <meta property="og:type" content="website">
+
+    <title>BlockchainMall.org - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="premium-bg"></div>
+    
+    <!-- Video Background -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline loading="lazy">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-woman-shopping-online-4440-large.mp4" type="video/mp4">
+            <div class="video-fallback">Your browser does not support the video tag.</div>
+        </video>
+    </div>
+    
+    <div class="overlay"></div>
+    
+    <div class="coming-soon-container">
+        <h1 class="logo fade-in">BlockchainMall.org</h1>
+        <p class="tagline fade-in">Discover, Shop, Love it.</p>
+        
+        <h2 class="main-headline fade-in">The Future of E-Commerce is Coming</h2>
+        
+        <p class="description fade-in">
+            BlockchainMall.org is revolutionizing online shopping with blockchain technology, 
+            borderless transactions, and crypto cashbacks. Experience the future of e-commerce 
+            where every purchase is secure, rewarding, and globally accessible.
+        </p>
+        
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Borderless Shopping</h3>
+                <p class="feature-description">Shop globally without restrictions. Our platform eliminates borders and currency barriers.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-coins" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Crypto Cashbacks</h3>
+                <p class="feature-description">Earn 3% back on every purchase with Zarraz Dollar. Turn shopping into earning.</p>
+            </div>
+            
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                </div>
+                <h3 class="feature-title">Secure & Transparent</h3>
+                <p class="feature-description">Blockchain-powered security ensures every transaction is safe and transparent.</p>
+            </div>
+        </div>
+        
+        <div class="countdown-timer">
+            <div class="countdown-card fade-in">
+                <div id="countdown-days" class="countdown-value">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-card fade-in">
+                <div id="countdown-hours" class="countdown-value">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-card fade-in">
+                <div id="countdown-minutes" class="countdown-value">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-card fade-in">
+                <div id="countdown-seconds" class="countdown-value">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        
+        <div class="signup-form fade-in">
+            <h3 class="form-title">Get Early Access & Exclusive Launch Offers</h3>
+            <form id="early-access-form" action="/submit_email" method="POST">
+                <div class="form-group">
+                    <label for="email">Your Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                </div>
+                <button type=" <div class="social-links">
+            <a href="https://twitter.com" class="social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://telegram.org" class="social-link" aria-label="Telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://discord.com" class="social-link" aria-label="Discord">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://medium.com" class="social-link" aria-label="Medium">
+                <i class="fab fa-medium"></i>
+            </a>
+            <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 BlockchainMall.org. All rights reserved.</p>
+            <p>Building the future of decentralized commerce</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Countdown Timer Script
+        const countdownDate = new Date("2025-12-31T00:00:00").getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown-days").textContent = days;
+            document.getElementById("countdown-hours").textContent = hours;
+            document.getElementById("countdown-minutes").textContent = minutes;
+            document.getElementById("countdown-seconds").textContent = seconds;
+        };
+
+        setInterval(updateCountdown, 1000);
+
+        // Form Feedback Script
+        document.getElementById("early-access-form").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            if (email) {
+                document.getElementById("form-feedback").textContent = "Thank you for signing up!";
+            } else {
+                document.getElementById("form-feedback").textContent = "Please enter a valid email address.";
+            }
+        });
+    </script>
+</body>
+</html>
